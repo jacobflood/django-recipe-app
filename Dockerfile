@@ -9,7 +9,7 @@ COPY ./app /app
 WORKDIR /app
 EXPOSE 8000
 
-ARG DEV=false
+
 RUN \
     pip install --upgrade pip && \
     pip install -r /tmp/requirements.txt && \
