@@ -9,13 +9,10 @@ COPY ./app /app
 WORKDIR /app
 EXPOSE 8000
 
-
 RUN \
     pip install --upgrade pip && \
     pip install -r /tmp/requirements.txt && \
-    if [ $DEV = "true" ]; \
-        then pip install -r /tmp/requirements.dev.txt ; \
-    fi && \
+    pip install -r /tmp/requirements.dev.txt && \
     rm -rf /tmp && \
     adduser --disabled-password --no-create-home django-user
 
